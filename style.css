@@ -1,0 +1,197 @@
+/*Reset (vi ricordate che abbiamo detto che tutti i browser hanno un
+CSS di base? Le righe che seguono servono per resettare quel CSS e partire da zero)*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px; /*decidiamo che la misura di partenza per la pagina è 16px, che poi è quella di default (vd. più in basso la spiegazione sui rem, riga 36)*/
+}
+
+/*Stili di base del <body> e quindi di tutta la pagina*/
+
+body {
+    font-family: Arial, sans-serif; /*potete cambiare font*/
+    line-height: 1.5; /*interlinea*/
+    color: #333;
+}
+
+img {
+    max-width: 100%; /*le immagini non sforano mai dalla larghezza del loro contenitore (serve per renderle sempre responsive)*/
+}
+
+/*Testata e navigazione*/
+header {
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /*ombra della barra che contiene il menu*/
+    position: fixed; /*questa proprietà fa in modo che quando scrolliamo verso il basso, la barra rimane fissa in alto*/
+    width: 100%; /*larghezza della barra al 100% della larghezza della pagina*/
+    top: 0; /*barra appiccicata alla sommità della pagina*/
+    z-index: 1000; /*questa proprietà serve per fare in modo che la barra stia "sopra" a tutti gli altri elementi (pensate ai livelli di Photoshop*/
+}
+
+nav ul {
+    display: flex; /*per far stare uno accanto all'altro tutti gli elementi della navigazizone (voci di menu)*/
+    justify-content: center; /*per capire bene tutte le proprietà di flexbox, leggete questo articolo: https://css-tricks.com/snippets/css/a-guide-to-flexbox/*/
+    list-style: none; /*per togliere i pallini alle voci di menu*/
+    padding: 1rem; /*"rem" è un'unità di misura che sta per "root em", ovvero l'unità di misura espressa per il selettore html della pagina (root). Nel nostro caso la base è 16px, quindi 1rem = 16px (mentre per esempio 1.5rem = 24px e così via). Si usa per rendere tutta la pagina più flessibile se si vogliono cambiare le dimensioni dei vari elementi nella pagina*/
+}
+
+nav ul li {
+    margin: 0 1.5rem;/*ci sono due valori, quindi "0" è per top e bottom, mentre "1.5rem" è per left e right*/
+}
+
+nav ul li a { /*questo significa (si legge da dx verso sx) "tutti i link dentro alle voci di menu"*/
+    text-decoration: none; /*link non sottolineati*/
+    color: #333;
+    font-weight: 500; /*peso del font*/
+}
+
+/* Sezione con classe "hero */
+.hero {
+    height: 100vh; /*altezza di questa sezione 100 "viewport height", ovvero il 100% dell'altezza della finestra del browser (viewport)*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center; /*testo centrato*/
+    background-color: #f5f5f5;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: #666;
+}
+
+/* Research Section */
+.research-section {
+    padding: 5rem 2rem;
+}
+
+.research-grid {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+}
+
+.research-item {
+    flex: 1; /*ogni elemento dei 3 nella "research-grid" è largo come gli altri*/
+    padding: 2rem;
+    margin: 1rem;
+    border-radius: 8px; /*angoli stondati*/
+    background-color: #ddd;
+}
+
+/* Prototypes Section */
+.prototypes-section {
+    padding: 5rem 2rem;
+    background-color: #f5f5f5;
+}
+
+.prototype-timeline {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+}
+
+.prototype-stage {
+    flex: 1;
+    padding: 2rem;
+    margin: 1rem;
+    border-radius: 8px; /*angoli stondati*/
+    background-color: #fafafa;
+}
+
+/* Features Section */
+.features-section {
+    padding: 5rem 2rem;
+}
+
+.features-grid {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+}
+
+.feature-card {
+    flex: 1;
+    padding: 2rem;
+    margin: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    text-align: center;
+}
+
+.feature-icon {
+    width: 60px;
+    height: 60px;
+    background-color: #ddd;
+    border-radius: 50%;
+    margin: 0 auto 1rem; /*0 top, auto left e right quindi centrato orizzontalmente, 1rem bottom*/
+}
+
+/* Titoli delle sezioni */
+h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+}
+
+h3 {
+    margin-bottom: 1rem;
+}
+
+/* Piede */
+footer {
+    text-align: center;
+    padding: 2rem;
+    background-color: #333;
+    color: #fff;
+}
+
+/* Responsive Design - Cosa succede quando lo schermo arriva fino a 768px, quindi diciamo uno smartphone in modalità landscape (orizzontale) oppure un tablet in modalità portrait (verticale) */
+@media (max-width: 768px) {
+    section.hero {
+        height: 80vh;
+        width: 90%;
+        margin: 0 auto; /*per centrare orizzontalmente la sezione*/
+    }
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    nav ul {
+        flex-direction: column; /*questo succede spesso nel design per dispositivi mobili: gli elementi che su desktop e laptop erano affiancati orizzontalmente, si dispongono su colonna per occupare meno spazio*/
+        align-items: center;
+    }
+    
+    nav ul li {
+        margin: 0.5rem 0;
+    }
+
+    .research-grid,
+    .prototype-timeline,
+    .features-grid {
+        flex-direction: column;
+        align-items: stretch; /*fa in modo che gli elementi occupino tutta la larghezza della pagina*/
+    }
+
+    .research-item,
+    .prototype-stage,
+    .feature-card {
+        margin: 1rem 0;
+        width: 100%;
+    }
+
+    .prototype-stage {
+        padding: 0;
+    }
+}

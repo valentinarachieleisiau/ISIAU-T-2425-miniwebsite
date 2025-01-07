@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>University Life App - Design Process</title><!--ricordarsi di cambiare il title con quello che si desidera-->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header><!--selettore con il preciso compito semantico di fare da testata-->
+        <nav><!--selettore con il preciso compito semantico di fare navigazione (menu del sito)-->
+            <ul><!--lista non ordinata (unordered list)-->
+                <li><a href="#research">Research</a></li>
+                <li><a href="#prototypes">Prototypes</a></li>
+                <li><a href="#features">Features</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main><!--selettore con il preciso compito semantico di fare da contenuto principale-->
+        <section class="hero"><!--selettore che agisce come sezione del sito-->
+            <h1>Nome dell'app</h1>
+            <p class="subtitle">Sottotitolo [ad esempio: la compagnia digitale per sopravvivere alla vita universitaria]</p><!--questo paragrafo ha una classe "subtitle"-->
+        </section>
+
+        <section id="research" class="research-section"><!--questa sezione ha un id "research" e una classe "research-section"-->
+            <h2>Fase di ricerca</h2>
+            <div class="research-grid"><!--i <div> sono dei contenitori che servono a raggruppare diversi elementi (questo e i due che seguono per esempio raggruppano un titolo di terzo livello e un paragrafo)-->
+                <div class="research-item">
+                    <h3>User Interviews</h3>
+                    <p>Insights gathered from interviewing 20 university students</p>
+                </div>
+                <div class="research-item">
+                    <h3>Pain Points Analysis</h3>
+                    <p>Key challenges identified in student life</p>
+                </div>
+                <div class="research-item">
+                    <h3>Competitive Analysis</h3>
+                    <p>Review of existing solutions</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="prototypes" class="prototypes-section">
+            <h2>Wireframe e prototipi</h2>
+            <div class="prototype-timeline">
+                <div class="prototype-stage">
+                    <h3>Initial Wireframes</h3>
+                    <img src="https://placehold.co/400x250?text=img" alt="Descrizione alternativa dell'immagine">
+                </div>
+                <div class="prototype-stage">
+                    <h3>Low-Fi Prototype</h3>
+                    <img src="https://placehold.co/400x250?text=img" alt="Descrizione alternativa dell'immagine">
+                </div>
+                <div class="prototype-stage">
+                    <h3>Hi-Fi Prototype</h3>
+                    <img src="https://placehold.co/400x250?text=img" alt="Descrizione alternativa dell'immagine">
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="features-section">
+            <h2>Caratteristiche chiave</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon"></div>
+                    <h3>Feature 1</h3>
+                    <p>Description of the first key feature</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"></div>
+                    <h3>Feature 2</h3>
+                    <p>Description of the second key feature</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon"></div>
+                    <h3>Feature 3</h3>
+                    <p>Description of the third key feature</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer><!--selettore con il preciso compito semantico di fare da piede del sito-->
+        <p>ISIA Urbino - a.a. 2024-2025 - Corso di Design dell'Interfaccia 1 - prof. Valentina Rachiele</p> <!--questo è l'unico contenuto del sito da non modificare (attenzione: il contenuto, non la forma)-->
+        <!--qui, come in tutte le altre parti del body, potete aggiungere altri contenuti-->
+    </footer>
+</body>
+</html>
